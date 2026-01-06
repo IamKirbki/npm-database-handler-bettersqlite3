@@ -1,6 +1,6 @@
 {
   "name": "@iamkirbki/database-handler-better-sqlite3",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "author": "iamkirbki",
   "description": "Better-sqlite3 adapter for @kirbkis-database-handler/core",
   "license": "ISC",
