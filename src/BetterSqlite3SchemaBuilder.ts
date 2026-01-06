@@ -1,6 +1,6 @@
 import { BetterSqlite3TableSchemaBuilder } from "./BetterSqlite3TableSchemaBuilder.js";
 import BetterSqlite3Adapter from "./BetterSqlite3Adapter.js";
-import AbstractSchemaBuilder from "@core/interfaces/ISchemaBuilder.js";
+import { AbstractSchemaBuilder } from "@iamkirbki/database-handler-core";
 
 export class BetterSqlite3SchemaBuilder implements AbstractSchemaBuilder {
     // eslint-disable-next-line no-unused-vars
