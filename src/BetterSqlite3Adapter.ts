@@ -55,6 +55,16 @@ export default class BetterSqlite3Adapter implements IDatabaseAdapter {
         }));
     }
 
+    async tableExists(tableName: string): Promise<boolean> {
+        if (!this._db) {
+            throw new Error("Database is not connected.");
+        }
+
+        const stmt = this._db.prepare(`SELECT name FROM sqlite_master WHERE type='table' AND name=?`);
+        const row = stmt.get(tableName);
+        return !!row;
+    }
+
     async close(): Promise<void> {
         if (!this._db) {
             throw new Error("Database is not connected.");
