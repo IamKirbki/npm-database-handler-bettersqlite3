@@ -18,8 +18,10 @@ export class BetterSqlite3SchemaBuilder implements AbstractSchemaBuilder {
         statement.run();
     }
 
-    async dropTable(name: string) {
+    async dropTable(name: string, cascade?: boolean): Promise<void> {
         const query = `DROP TABLE IF EXISTS ${name}`;
+        // eslint-disable-next-line no-undef
+        if (cascade) console.warn("SQLite does not support CASCADE on DROP TABLE. Ignoring cascade option.");
         const statement = await this._adapter.prepare(query);
         statement.run();
     }
